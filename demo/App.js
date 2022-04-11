@@ -40,23 +40,25 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  const [startPage, setStartPage] = useState('StartScreen');
-  useEffect(() => {
-    loadToken().then(value => {
-      if (value) {
-        AuthService.getUser(value)
-        .then(response => {
-          console.log(response.data);
-        }).catch(err => {
-          console.log(err);
-        })
-      }
-    })
-  });
-
+  // const [startPage, setStartPage] = useState('StartScreen');
+  // useEffect(() => {
+  //   loadToken().then(value => {
+  //     if (value) {
+  //       AuthService.getUser(value)
+  //       .then(response => {
+  //         console.log(response.data);
+  //       }).catch(err => {
+  //         console.log(err);
+  //       })
+  //     }
+  //   })
+  // });bc
+;
+  const [username, setUsername] = useState('');
+  // const test = () => console.log(2);
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={ startPage }>
+      <Stack.Navigator initialRouteName='StartScreen'>
         <Stack.Screen name="StartScreen" component={StartScreen}/>
         <Stack.Screen name="Login" component={Login} options={{ title: 'Overview' }} />
         <Stack.Screen name="Signup" component={Signup} />

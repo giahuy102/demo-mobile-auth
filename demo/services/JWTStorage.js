@@ -25,6 +25,16 @@ export const loadToken = async () => {
       }
 }
 
+export const removeKey = async (key) => {
+    try {
+        await AsyncStorage.removeItem(key);
+        return true;
+    }
+    catch(err) {
+        console.log(err);
+    }
+};
+
 // export const getToken = () => {
 //     const promise = loadToken();
 //     let token = null;

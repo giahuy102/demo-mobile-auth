@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ActionSheetIOS } from 'react-native';
-const API_URL = "http://192.168.1.37:3001/api/user/";
+const API_URL = "http://192.168.0.104:3001/api/user/";
 
 // import { useNavigate } from "react-router-dom";
 

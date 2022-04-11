@@ -27,7 +27,7 @@ export default function Login({navigation}) {
 
             console.log(response.data.accessToken);
             storeToken('jwt-token', response.data.accessToken);
-            navigation.navigate('Homepage');
+            navigation.navigate('Homepage', {username: response.data.username});
             // navigate('/');
             // console.log(response.data);
         }).catch(err => { 

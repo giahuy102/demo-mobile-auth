@@ -35,27 +35,58 @@ export default function Singup({navigation}) {
     }
 
     return (
-        <SafeAreaView>
+        <View style={styles.container}>
             <TextInput 
+                style={styles.input}
                 placeholder='Enter username'
                 onChangeText={ text => setUsername(text) }
             />
 
             <TextInput 
+                style={styles.input}
                 placeholder='Enter email address'
                 onChangeText={ text => setEmail(text) }
                 keyboardType="email-address"
             />
 
             <TextInput 
+                style={styles.input}
                 secureTextEntry={true}
                 placeholder='Enter password'
                 onChangeText={ text => setPassword(text) }
             />
-            <Button 
-                title="Submit"
-                onPress={handleRegister}
-            />
-        </SafeAreaView>
+            <View style={styles.button}>
+                <Button 
+                    title="Submit"
+                    onPress={handleRegister}
+                />
+            </View>
+
+        </View>
     );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+    // width: 100
+  },
+  input: {
+
+    borderWidth: 1,
+    borderColor: "thistle",
+    width: 300,
+    height: 50,
+    margin: 10,
+    fontSize: 16,
+    paddingLeft: 20,
+    paddingRight: 20
+  },
+  button: {
+    margin: 10,
+    width: 300
+      
+  }
+});

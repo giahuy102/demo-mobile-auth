@@ -14,6 +14,7 @@ import { storeToken } from '../services/JWTStorage';
 export default function Login({navigation}) {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
+    const [borderColor, setBorderColor] = useState();
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -40,22 +41,52 @@ export default function Login({navigation}) {
     }
 
     return (
-        <SafeAreaView>
+        <View style={styles.container}>
             <TextInput 
+                style={styles.input}
                 placeholder='Enter email address'
                 onChangeText={ text => setEmail(text) }
                 keyboardType="email-address"
             />
 
             <TextInput 
+                style={styles.input}
                 secureTextEntry={true}
                 placeholder='Enter password'
                 onChangeText={ text => setPassword(text) }
             />
-            <Button 
-                title="Submit"
-                onPress={handleLogin}
-            />
-        </SafeAreaView>
+            <View style={styles.button}>
+                <Button 
+                    title="Submit"
+                    onPress={handleLogin}
+                />
+            </View>
+
+        </View>
     );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+    // width: 100
+  },
+  input: {
+
+    borderWidth: 1,
+    borderColor: "thistle",
+    width: 300,
+    height: 50,
+    margin: 10,
+    fontSize: 16,
+    paddingLeft: 20,
+    paddingRight: 20
+  },
+  button: {
+    margin: 10,
+    width: 300
+      
+  }
+});

@@ -31,15 +31,19 @@ export default function StartScreen({navigation}) {
 
     return (
         <View style={ styles.container }>
+          <View style={ styles.button }>
             <Button 
                 title="Login"
                 onPress={() => navigation.navigate('Login')}
             />
-
+          </View>
+          <View style={ styles.button }>
             <Button 
                 title="Sign up"
                 onPress={() => navigation.navigate('Signup')}
             />
+          </View>
+
         </View>
 
     );
@@ -49,11 +53,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
     // width: 100
   },
   button: {
-      marginBottom: 10,
-      width: 4
+      margin: 10,
+      width: "80%"
+      
   }
 });

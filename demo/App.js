@@ -58,9 +58,9 @@ export default function App() {
   // const test = () => console.log(2);
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='StartScreen'>
-        <Stack.Screen name="StartScreen" component={StartScreen}/>
-        <Stack.Screen name="Login" component={Login} options={{ title: 'Overview' }} />
+      <Stack.Navigator initialRouteName='StartScreen' >
+        <Stack.Screen name="StartScreen" component={StartScreen} options={{headerShown: false}} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen 
           name="Homepage" 
